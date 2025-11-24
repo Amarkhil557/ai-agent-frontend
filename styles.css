@@ -1,0 +1,214 @@
+
+body.dark-mode {
+    --bg: #0e0f11;
+    --sidebar: #131417;
+    --border: #222;
+    --text: #ffffff;
+    --bubble-user: #2563eb;
+    --bubble-bot: #1f2126;
+    --hover: #2a2c33;
+}
+
+body.light-mode {
+    --bg: #f8f9fc;
+    --sidebar: #ffffff;
+    --border: #ddd;
+    --text: #111;
+    --bubble-user: #4a90ff;
+    --bubble-bot: #e8e9ee;
+    --hover: #dfe3eb;
+}
+
+/* GENERAL LAYOUT */
+* {
+    transition: 0.25s ease;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 260px;
+    background: var(--sidebar);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 100vh;
+}
+
+/* OBEN */
+.sidebar-top {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: #61a3ff;
+    margin-top: 10px;
+    
+    display: flex;          /* Text + Icon nebeneinander */
+    align-items: center;    /* vertikal zentriert */
+    gap: 10px;              /* Abstand zwischen Text und Icon */
+}
+
+.KitoIcon {
+    width: 40px;
+    height: 40px;
+}
+
+/* BUTTONS */
+.sidebar-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 8px;
+    background: var(--bubble-bot);
+    color: var(--text);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.sidebar-btn:hover {
+    background: var(--hover);
+}
+
+/* SIDEBAR BOTTOM (Dark Mode Toggle) */
+.sidebar-bottom {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 60px;
+}
+
+/* SWITCH STYLE */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 24px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 24px;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #2563eb;
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+.switch-text {
+    font-size: 16px;
+}
+
+/* CHAT AREA */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-output {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.msg {
+    max-width: 70%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin: 12px 0;
+}
+
+.user-msg {
+    background: var(--bubble-user);
+    color: white;
+    align-self: flex-end;
+}
+
+.bot-msg {
+    background: var(--bubble-bot);
+    border-left: 4px solid #2563eb;
+}
+
+/* INPUT BAR */
+.input-bar {
+    display: flex;
+    padding: 20px;
+    background: var(--sidebar);
+    border-top: 1px solid var(--border);
+}
+
+.input-field {
+    flex: 1;
+    padding: 14px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 16px;
+    height: 60px;
+    resize: none;
+}
+
+.send-btn {
+    width: 60px;
+    background: #2563eb;
+    border: none;
+    margin-left: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.send-btn:hover {
+    background: #1d4ed8;
+}
+
+.send-icon {
+    width: 26px;
+    height: 26px;
+}

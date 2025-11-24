@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KI-Agent</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-mode">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <!--  Logo -->
+        <div class="sidebar-top">
+            <h2 class="logo">
+                KiTu
+                <img src="Bot.png" alt="Kito Icon" class="KitoIcon">
+            </h2>
+
+            <button class="sidebar-btn new-chat">➕ <span class="btn-text">Neue Anfrage</span></button>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Zuletzt benutzt</h3>
+                <ul class="history-list" id="historyList">
+                    <!-- Dynamische Historie -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dark Mode Switch -->
+        <div class="sidebar-bottom">
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle" checked>
+                <span class="slider"></span>
+            </label>
+            <span class="switch-text">Dark Mode</span>
+        </div>
+    </aside>
+
+    <!-- CHAT-BEREICH -->
+    <main class="chat-container">
+        <div class="chat-output" id="chatOutput"></div>
+
+        <div class="input-bar">
+            <textarea id="userInput" class="input-field" placeholder="Stelle eine Frage an den KI-Agenten..."></textarea>
+            <button id="sendBtn" class="send-btn">
+                <svg class="send-icon" viewBox="0 0 24 24">
+                    <path d="M2 21l21-9L2 3v7l15 2-15 2v7z" fill="white"/>
+                </svg>
+            </button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
